@@ -5,7 +5,6 @@ Login::Login(QWidget *parent )
 	setParent(parent);
 	ui.setupUi(this);
 	this->setModal(true);
-	this->setWindowFlags(Qt::CustomizeWindowHint);
 
 	connect(ui.comfirm_PB, SIGNAL(clicked()), this, SLOT(confirm()));
 	connect(ui.cancel_PB, SIGNAL(clicked()), this, SLOT(cancel()));
@@ -19,6 +18,11 @@ Login::~Login()
 bool Login::verify()
 {
 	return m_verify;
+}
+
+QString Login::getUsername()
+{
+	return m_username;
 }
 
 void Login::confirm()
@@ -35,7 +39,7 @@ void Login::confirm()
 		QSqlQuery result = tempInstance->exec(query);
 		QSqlRecord rec = result.record();
 
-		if (rec.count() < 1)
+		if (result.size() < 1)
 		{
 			QMessageBox::critical(0, QStringLiteral("登录失败"), 	QStringLiteral("未找到用户名"), QMessageBox::Cancel);
 		}
@@ -51,6 +55,8 @@ void Login::confirm()
 				this->accept();
 				//提示登录成功
 				QMessageBox::about(NULL, QStringLiteral("登录成功"), QStringLiteral("登录成功"));
+				m_username = username;
+				m_verify        = true;
 			}
 			else
 			{

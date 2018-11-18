@@ -4,6 +4,7 @@
 #include <QDebug>
 #include "ui_SIMS.h"
 #include "Login.h"
+#include "Project.h"
 
 class SIMS : public QMainWindow
 {
@@ -11,12 +12,24 @@ class SIMS : public QMainWindow
 
 public:
 	SIMS(QWidget *parent = Q_NULLPTR);
-
+	void process();
+	
+private slots:
+	//项目管理响应
+	void project();
+	//软件管理响应
+	void software();
+	//日志查看响应
+	void log();
+	//账户管理响应
+	void account();
 
 private:
 	void init();
-	bool login();
 
 	Ui::SIMSClass ui;
+	//登录对话框及状态
 	Login* m_login;
+	//项目管理相关操作
+	Project* m_project;
 };

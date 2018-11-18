@@ -1,4 +1,14 @@
 <RCC>
-    <qresource prefix="SIMS">
-    </qresource>
+  <qresource prefix="SIMS"/>
+  <qresource prefix="icons">
+    <file>icons/account.png</file>
+    <file>icons/dataStream.png</file>
+    <file>icons/log.png</file>
+    <file>icons/statistics.png</file>
+    <file>icons/software.png</file>
+    <file>icons/project.png</file>
+  </qresource>
+  <qresource prefix="background">
+    <file>background.jpg</file>
+  </qresource>
 </RCC>

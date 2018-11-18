@@ -1,29 +1,140 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>SIMSClass</class>
- <widget class="QMainWindow" name="SIMSClass" >
-  <property name="objectName" >
-   <string notr="true">SIMSClass</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QMainWindow" name="SIMSClass">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>600</width>
-	<height>400</height>
+    <x>0</x>
+    <y>0</y>
+    <width>597</width>
+    <height>400</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>SIMS</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="background_L">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>597</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="project"/>
+   <addaction name="software"/>
+   <addaction name="separator"/>
+   <addaction name="log"/>
+   <addaction name="account"/>
+  </widget>
+  <action name="project">
+   <property name="icon">
+    <iconset resource="SIMS.qrc">
+     <normaloff>:/icons/icons/project.png</normaloff>:/icons/icons/project.png</iconset>
+   </property>
+   <property name="text">
+    <string>项目管理</string>
+   </property>
+  </action>
+  <action name="software">
+   <property name="icon">
+    <iconset resource="SIMS.qrc">
+     <normaloff>:/icons/icons/software.png</normaloff>:/icons/icons/software.png</iconset>
+   </property>
+   <property name="text">
+    <string>软件管理</string>
+   </property>
+   <property name="toolTip">
+    <string>软件管理</string>
+   </property>
+  </action>
+  <action name="account">
+   <property name="icon">
+    <iconset resource="SIMS.qrc">
+     <normaloff>:/icons/icons/account.png</normaloff>:/icons/icons/account.png</iconset>
+   </property>
+   <property name="text">
+    <string>账号</string>
+   </property>
+   <property name="toolTip">
+    <string>账号</string>
+   </property>
+  </action>
+  <action name="log">
+   <property name="icon">
+    <iconset resource="SIMS.qrc">
+     <normaloff>:/icons/icons/log.png</normaloff>:/icons/icons/log.png</iconset>
+   </property>
+   <property name="text">
+    <string>日志</string>
+   </property>
+   <property name="toolTip">
+    <string>日志</string>
+   </property>
+  </action>
+  <action name="statistics">
+   <property name="icon">
+    <iconset resource="SIMS.qrc">
+     <normaloff>:/icons/icons/statistics.png</normaloff>:/icons/icons/statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>统计</string>
+   </property>
+   <property name="toolTip">
+    <string>统计</string>
+   </property>
+  </action>
+  <action name="dataStream">
+   <property name="icon">
+    <iconset resource="SIMS.qrc">
+     <normaloff>:/icons/icons/dataStream.png</normaloff>:/icons/icons/dataStream.png</iconset>
+   </property>
+   <property name="text">
+    <string>信息流设计</string>
+   </property>
+   <property name="toolTip">
+    <string>信息流设计</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources>
-   <include location="SIMS.qrc"/>
+  <include location="SIMS.qrc"/>
  </resources>
  <connections/>
-</UI>
+</ui>

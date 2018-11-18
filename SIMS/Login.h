@@ -13,7 +13,7 @@ public:
 	~Login();
 
 	bool verify();
-
+	QString getUsername();
 
 private slots:
 	void confirm();
@@ -22,6 +22,6 @@ private slots:
 private:
 	Ui::LoginDialog ui;
 	bool m_verify = false;
-
+	QString m_username = QString("null");
 };
 

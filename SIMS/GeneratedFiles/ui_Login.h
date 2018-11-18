@@ -17,21 +17,21 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QWidget>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_LoginDialog
 {
 public:
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_2;
     QLabel *label;
-    QWidget *formLayoutWidget;
     QFormLayout *formLayout;
     QLabel *label_2;
     QLineEdit *username_LE;
     QLineEdit *password_LE;
     QLabel *label_3;
-    QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *comfirm_PB;
     QPushButton *cancel_PB;
@@ -41,51 +41,63 @@ public:
         if (LoginDialog->objectName().isEmpty())
             LoginDialog->setObjectName(QStringLiteral("LoginDialog"));
         LoginDialog->resize(375, 164);
+        verticalLayout = new QVBoxLayout(LoginDialog);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         label = new QLabel(LoginDialog);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(180, 10, 41, 20));
-        formLayoutWidget = new QWidget(LoginDialog);
-        formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
-        formLayoutWidget->setGeometry(QRect(19, 40, 351, 51));
-        formLayout = new QFormLayout(formLayoutWidget);
+        QFont font;
+        font.setFamily(QStringLiteral("Agency FB"));
+        font.setPointSize(12);
+        label->setFont(font);
+        label->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_2->addWidget(label);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        formLayout = new QFormLayout();
         formLayout->setObjectName(QStringLiteral("formLayout"));
-        formLayout->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(formLayoutWidget);
+        label_2 = new QLabel(LoginDialog);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
 
-        username_LE = new QLineEdit(formLayoutWidget);
+        username_LE = new QLineEdit(LoginDialog);
         username_LE->setObjectName(QStringLiteral("username_LE"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, username_LE);
 
-        password_LE = new QLineEdit(formLayoutWidget);
+        password_LE = new QLineEdit(LoginDialog);
         password_LE->setObjectName(QStringLiteral("password_LE"));
         password_LE->setEchoMode(QLineEdit::Password);
 
         formLayout->setWidget(1, QFormLayout::FieldRole, password_LE);
 
-        label_3 = new QLabel(formLayoutWidget);
+        label_3 = new QLabel(LoginDialog);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
 
-        horizontalLayoutWidget = new QWidget(LoginDialog);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(110, 100, 161, 51));
-        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
+
+        verticalLayout->addLayout(formLayout);
+
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        comfirm_PB = new QPushButton(horizontalLayoutWidget);
+        comfirm_PB = new QPushButton(LoginDialog);
         comfirm_PB->setObjectName(QStringLiteral("comfirm_PB"));
 
         horizontalLayout->addWidget(comfirm_PB);
 
-        cancel_PB = new QPushButton(horizontalLayoutWidget);
+        cancel_PB = new QPushButton(LoginDialog);
         cancel_PB->setObjectName(QStringLiteral("cancel_PB"));
 
         horizontalLayout->addWidget(cancel_PB);
+
+
+        verticalLayout->addLayout(horizontalLayout);
 
 
         retranslateUi(LoginDialog);
@@ -95,7 +107,7 @@ public:
 
     void retranslateUi(QDialog *LoginDialog)
     {
-        LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "Dialog", nullptr));
+        LoginDialog->setWindowTitle(QApplication::translate("LoginDialog", "\347\231\273\345\275\225", nullptr));
         label->setText(QApplication::translate("LoginDialog", "\347\231\273\345\275\225", nullptr));
         label_2->setText(QApplication::translate("LoginDialog", "\347\224\250\346\210\267\345\220\215", nullptr));
         label_3->setText(QApplication::translate("LoginDialog", "\345\257\206\347\240\201", nullptr));

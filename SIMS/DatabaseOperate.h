@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QDebug>
 #include <QSqlRecord>
+#include <QSqlQueryModel>
 
 class DatabaseOperate
 {
@@ -12,6 +13,7 @@ public:
 	static DatabaseOperate* getInstance();
 	bool connect();
 	QSqlQuery exec(QString query);
+	QSqlDatabase getDB();
 
 private:
 	DatabaseOperate();

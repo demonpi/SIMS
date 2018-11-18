@@ -43,3 +43,8 @@ QSqlQuery DatabaseOperate::exec(QString query)
 {
 	return m_db.exec(query);
 }
+
+QSqlDatabase DatabaseOperate::getDB()
+{
+	return this->m_db;
+}
