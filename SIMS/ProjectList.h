@@ -1,11 +1,12 @@
 #pragma once
 
-#include <QWidget>
+#include <QDialog>
 #include <QSortFilterProxyModel>
 #include "ui_ProjectList.h"
 #include "DatabaseOperate.h"
+#include "ProjectAdd.h"
 
-class ProjectList : public QWidget
+class ProjectList : public QDialog
 {
 	Q_OBJECT
 
@@ -15,6 +16,8 @@ public:
 
 private slots:
 	void filtrate(QString text);
+	void addProject();
+	void showUP();
 
 private:
 	Ui::ProjectList ui;

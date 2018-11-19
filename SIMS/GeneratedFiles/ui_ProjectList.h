@@ -33,7 +33,7 @@ public:
     {
         if (ProjectList->objectName().isEmpty())
             ProjectList->setObjectName(QStringLiteral("ProjectList"));
-        ProjectList->resize(493, 421);
+        ProjectList->resize(429, 421);
         verticalLayout = new QVBoxLayout(ProjectList);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
