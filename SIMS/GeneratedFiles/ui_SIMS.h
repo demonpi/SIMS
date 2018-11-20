@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QToolBar>
@@ -31,8 +30,7 @@ public:
     QAction *statistics;
     QAction *dataStream;
     QWidget *centralWidget;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *background_L;
+    QHBoxLayout *horizontalLayout;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
 
@@ -73,16 +71,12 @@ public:
         dataStream->setIcon(icon5);
         centralWidget = new QWidget(SIMSClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayout_2 = new QHBoxLayout(centralWidget);
-        horizontalLayout_2->setSpacing(0);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        background_L = new QLabel(centralWidget);
-        background_L->setObjectName(QStringLiteral("background_L"));
-
-        horizontalLayout_2->addWidget(background_L);
-
+        centralWidget->setStyleSheet(QStringLiteral("background-image: url(:/background/background.jpg);"));
+        horizontalLayout = new QHBoxLayout(centralWidget);
+        horizontalLayout->setSpacing(0);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
         SIMSClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(SIMSClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -127,7 +121,6 @@ public:
 #ifndef QT_NO_TOOLTIP
         dataStream->setToolTip(QApplication::translate("SIMSClass", "\344\277\241\346\201\257\346\265\201\350\256\276\350\256\241", nullptr));
 #endif // QT_NO_TOOLTIP
-        background_L->setText(QApplication::translate("SIMSClass", "TextLabel", nullptr));
     } // retranslateUi
 
 };

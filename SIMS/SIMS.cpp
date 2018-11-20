@@ -10,10 +10,6 @@ void SIMS::init()
 {
 	//登录功能
 	m_login = new Login();
-	//修改背景图
-	QImage backgroundImage(":/background/background.jpg");
-	backgroundImage.scaled(this->width(), this->height(), Qt::KeepAspectRatio);
-	ui.background_L->setPixmap(QPixmap::fromImage(backgroundImage));
 	//绑定所有action操作
 	connect(ui.project,   SIGNAL(triggered()), this, SLOT(project()));
 	connect(ui.software, SIGNAL(triggered()), this, SLOT(software()));
@@ -27,6 +23,11 @@ void SIMS::process()
 {
 	//界面初始化
 	init();
+}
+
+QWidget* SIMS::getCentralWidget()
+{
+	return ui.centralWidget;
 }
 
 void SIMS::account()
@@ -53,7 +54,15 @@ void SIMS::project()
 	//如果已登录，再显示其他逻辑
 	else
 	{
-		m_project->show();
+		if (m_project != nullptr)
+		{
+			m_project->show();
+		}
+		else 
+		{
+			m_project = new Project(ui.centralWidget);
+			m_project->show();
+		}
 	}
 }
 

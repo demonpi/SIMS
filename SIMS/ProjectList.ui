@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>项目列表</string>
+   <string>选择项目</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -30,6 +30,13 @@
    </item>
    <item>
     <widget class="QListView" name="project_LV"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="open_PB">
+     <property name="text">
+      <string>打开</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

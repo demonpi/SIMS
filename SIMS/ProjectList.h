@@ -14,10 +14,14 @@ public:
 	ProjectList(QWidget *parent = Q_NULLPTR);
 	~ProjectList();
 
+signals:
+	void projectOpened(QString name);
+
 private slots:
 	void filtrate(QString text);
 	void addProject();
 	void showUP();
+	void openProject();
 
 private:
 	Ui::ProjectList ui;

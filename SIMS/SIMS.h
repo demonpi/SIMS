@@ -13,7 +13,8 @@ class SIMS : public QMainWindow
 public:
 	SIMS(QWidget *parent = Q_NULLPTR);
 	void process();
-	
+	QWidget* getCentralWidget();
+
 private slots:
 	//项目管理响应
 	void project();
@@ -31,5 +32,5 @@ private:
 	//登录对话框及状态
 	Login* m_login;
 	//项目管理相关操作
-	Project* m_project;
+	Project* m_project = nullptr;
 };

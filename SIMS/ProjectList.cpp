@@ -5,8 +5,10 @@ ProjectList::ProjectList(QWidget *parent)
 {
 	ui.setupUi(this);
 	connect(ui.name_LE, SIGNAL(textChanged(QString)), this, SLOT(filtrate(QString)));
-	connect(ui.add_PB, SIGNAL(clicked()), this, SLOT(addProject()));
-
+	connect(ui.add_PB,   SIGNAL(clicked()),                      this, SLOT(addProject()));
+	connect(ui.open_PB, SIGNAL(clicked()),                      this, SLOT(openProject()));
+	//设置modal
+	this->setModal(true);
 	//读取数据库
 	DatabaseOperate* tempConnect = DatabaseOperate::getInstance();
 	m_model = new QSqlQueryModel(this);
@@ -17,6 +19,7 @@ ProjectList::ProjectList(QWidget *parent)
 	m_proxyModel->setSourceModel(m_model);
 	m_proxyModel->setFilterKeyColumn(0);
 	ui.project_LV->setModel(m_proxyModel);
+	ui.project_LV->setSelectionMode(QAbstractItemView::SingleSelection);
 }
 
 ProjectList::~ProjectList()
@@ -44,4 +47,13 @@ void ProjectList::addProject()
 	ProjectAdd* addProject = new ProjectAdd();
 	connect(addProject, SIGNAL(rejected()), this, SLOT(showUP()));
 	addProject->show();
+}
+
+void ProjectList::openProject()
+{
+	//获取当前选定的项目名称，并通过SIGNAL传出
+	QItemSelectionModel * tempModel = ui.project_LV->selectionModel();
+	QModelIndexList indexes = tempModel->selectedIndexes();
+	this->close();
+	emit projectOpened(indexes.first().data().toString());
 }

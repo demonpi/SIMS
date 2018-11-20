@@ -51,6 +51,18 @@
     <ClCompile Include="ProjectAdd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectInfoWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectDataStreamWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSoftwareWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectTimeLineWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SIMS.h">
@@ -68,6 +80,18 @@
     <QtMoc Include="ProjectAdd.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="ProjectInfoWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ProjectDataStreamWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ProjectSoftwareWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="ProjectTimeLineWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="SIMS.ui">
@@ -80,6 +104,21 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ProjectAdd.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ProjectUI.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ProjectInfoWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ProjectDataStreamWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ProjectSoftwareWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ProjectTimeLineWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

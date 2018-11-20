@@ -28,6 +28,7 @@ public:
     QLineEdit *name_LE;
     QPushButton *add_PB;
     QListView *project_LV;
+    QPushButton *open_PB;
 
     void setupUi(QWidget *ProjectList)
     {
@@ -59,6 +60,11 @@ public:
 
         verticalLayout->addWidget(project_LV);
 
+        open_PB = new QPushButton(ProjectList);
+        open_PB->setObjectName(QStringLiteral("open_PB"));
+
+        verticalLayout->addWidget(open_PB);
+
 
         retranslateUi(ProjectList);
 
@@ -67,8 +73,9 @@ public:
 
     void retranslateUi(QWidget *ProjectList)
     {
-        ProjectList->setWindowTitle(QApplication::translate("ProjectList", "\351\241\271\347\233\256\345\210\227\350\241\250", nullptr));
+        ProjectList->setWindowTitle(QApplication::translate("ProjectList", "\351\200\211\346\213\251\351\241\271\347\233\256", nullptr));
         add_PB->setText(QApplication::translate("ProjectList", "\345\242\236\345\212\240", nullptr));
+        open_PB->setText(QApplication::translate("ProjectList", "\346\211\223\345\274\200", nullptr));
     } // retranslateUi
 
 };
