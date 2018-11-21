@@ -31,7 +31,7 @@ void Project::openProject(QString name)
 	//通过projectName初始化三个界面：基本信息、信息流、配套软件
 	m_infoWidget            = new ProjectInfoWidget();
 	m_dataStreamWidget = new ProjectDataStreamWidget();
-	m_softwareWidget     = new ProjectSoftwareWidget();
+	m_softwareWidget     = new ProjectSoftwareWidget(name);
 
 	m_mainWidget->addTab(m_infoWidget,            QStringLiteral("基本信息"));
 	m_mainWidget->addTab(m_dataStreamWidget, QStringLiteral("信息流"));

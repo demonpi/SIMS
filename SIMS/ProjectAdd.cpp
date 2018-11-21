@@ -26,7 +26,7 @@ void ProjectAdd::addProjcet()
 		//验证没有相同的项目名，利用了UNIQUE字段。直接提交看结果
 		QString name = ui.name_LE->text();
 		QString describe = ui.desceribe_TE->toPlainText();
-		QString query = QString("INSERT INTO `sims`.`projectinfo_t`(`name`, `describe`) VALUES ('" + name + "', '" + describe + "')");
+		QString query = QString("INSERT INTO `sims`.`project`(`project_name`, `project_describe`) VALUES ('" + name + "', '" + describe + "')");
 		tempConnect->exec(query);
 		if (tempConnect->getDB().lastError().type() == QSqlError::NoError)
 		{

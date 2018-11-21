@@ -12,7 +12,7 @@ ProjectList::ProjectList(QWidget *parent)
 	//读取数据库
 	DatabaseOperate* tempConnect = DatabaseOperate::getInstance();
 	m_model = new QSqlQueryModel(this);
-	m_model->setQuery(QString("SELECT `name` FROM projectinfo_t;"), tempConnect->getDB());
+	m_model->setQuery(QString("SELECT `project_name` FROM project;"), tempConnect->getDB());
 	//为界面设置model
 	//使用QSortFilterProxyModel代理来进行数据筛选
 	m_proxyModel = new QSortFilterProxyModel(this);
@@ -36,7 +36,7 @@ void ProjectList::filtrate(QString text)
 
 void ProjectList::showUP()
 {
-	m_model->setQuery(QString("SELECT `name` FROM projectinfo_t;"));
+	m_model->setQuery(QString("SELECT `project_name` FROM project;"));
 	this->show();
 }
 

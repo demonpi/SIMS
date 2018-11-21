@@ -35,7 +35,7 @@ void Login::confirm()
 		//获取界面提交数据
 		QString username = ui.username_LE->text();
 		QString password = ui.password_LE->text();
-		QString query = QString("SELECT `password` FROM `userinfo_t` WHERE username='" + username + "'");
+		QString query = QString("SELECT `user_password` FROM `user` WHERE user_name='" + username + "'");
 		QSqlQuery result = tempInstance->exec(query);
 		QSqlRecord rec = result.record();
 
@@ -47,7 +47,7 @@ void Login::confirm()
 		{
 			result.next();
 			rec = result.record();
-			int pswdcol = rec.indexOf("password");
+			int pswdcol = rec.indexOf("user_password");
 			QString value = result.value(pswdcol).toString();
 			if (value == password)
 			{
