@@ -40,7 +40,10 @@ public:
     QScrollArea *timeline_SA;
     QWidget *timeline_SA_Widget;
     QVBoxLayout *timeline_SA_Layout;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer;
     QPushButton *add_PB;
+    QPushButton *remove_PB;
 
     void setupUi(QWidget *ProjectInfoWidget)
     {
@@ -127,7 +130,7 @@ public:
         timeline_SA->setAlignment(Qt::AlignCenter);
         timeline_SA_Widget = new QWidget();
         timeline_SA_Widget->setObjectName(QStringLiteral("timeline_SA_Widget"));
-        timeline_SA_Widget->setGeometry(QRect(0, 0, 1139, 850));
+        timeline_SA_Widget->setGeometry(QRect(0, 0, 1139, 845));
         timeline_SA_Layout = new QVBoxLayout(timeline_SA_Widget);
         timeline_SA_Layout->setSpacing(6);
         timeline_SA_Layout->setContentsMargins(11, 11, 11, 11);
@@ -136,10 +139,25 @@ public:
 
         verticalLayout_2->addWidget(timeline_SA);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
         add_PB = new QPushButton(ProjectInfoWidget);
         add_PB->setObjectName(QStringLiteral("add_PB"));
 
-        verticalLayout_2->addWidget(add_PB);
+        horizontalLayout_2->addWidget(add_PB);
+
+        remove_PB = new QPushButton(ProjectInfoWidget);
+        remove_PB->setObjectName(QStringLiteral("remove_PB"));
+
+        horizontalLayout_2->addWidget(remove_PB);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_2);
 
 
         horizontalLayout->addLayout(verticalLayout_2);
@@ -161,6 +179,7 @@ public:
         save_PB->setText(QApplication::translate("ProjectInfoWidget", "\344\277\235\345\255\230", nullptr));
         label->setText(QApplication::translate("ProjectInfoWidget", "\346\227\266\351\227\264\347\272\277", nullptr));
         add_PB->setText(QApplication::translate("ProjectInfoWidget", "\346\267\273\345\212\240\344\272\213\344\273\266", nullptr));
+        remove_PB->setText(QApplication::translate("ProjectInfoWidget", "\345\210\240\351\231\244\344\272\213\344\273\266", nullptr));
     } // retranslateUi
 
 };

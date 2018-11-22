@@ -9,9 +9,12 @@ class Log : public QObject
 	Q_OBJECT
 
 public:
+	static Log* getInstance();
+
 	void addProject(QString projectName);
 	void setUserName(QString userName);
-	static Log* getInstance();
+
+	bool addEvent(QString projectName, QString event);
 
 private:
 	Log(QObject *parent = nullptr);	

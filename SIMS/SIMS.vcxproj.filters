@@ -66,6 +66,9 @@
     <ClCompile Include="Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectAddEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SIMS.h">
@@ -98,6 +101,9 @@
     <QtMoc Include="Log.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="ProjectAddEvent.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="SIMS.ui">
@@ -125,6 +131,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ProjectTimeLineWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="ProjectAddEvent.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

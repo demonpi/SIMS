@@ -11,7 +11,9 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
@@ -26,6 +28,8 @@ public:
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_3;
     QLabel *time_L;
+    QHBoxLayout *horizontalLayout;
+    QCheckBox *check_CB;
     QTextBrowser *content_TB;
 
     void setupUi(QWidget *ProjectTimeLineWidget)
@@ -47,13 +51,25 @@ public:
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         time_L = new QLabel(groupBox);
         time_L->setObjectName(QStringLiteral("time_L"));
+        time_L->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(time_L);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        check_CB = new QCheckBox(groupBox);
+        check_CB->setObjectName(QStringLiteral("check_CB"));
+
+        horizontalLayout->addWidget(check_CB);
 
         content_TB = new QTextBrowser(groupBox);
         content_TB->setObjectName(QStringLiteral("content_TB"));
 
-        verticalLayout_3->addWidget(content_TB);
+        horizontalLayout->addWidget(content_TB);
+
+
+        verticalLayout_3->addLayout(horizontalLayout);
 
 
         verticalLayout_2->addWidget(groupBox);
@@ -69,6 +85,7 @@ public:
         ProjectTimeLineWidget->setWindowTitle(QApplication::translate("ProjectTimeLineWidget", "ProjectTimeLineWidget", nullptr));
         groupBox->setTitle(QString());
         time_L->setText(QApplication::translate("ProjectTimeLineWidget", "TextLabel", nullptr));
+        check_CB->setText(QString());
     } // retranslateUi
 
 };

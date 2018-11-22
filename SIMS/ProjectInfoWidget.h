@@ -4,6 +4,7 @@
 #include "ui_ProjectInfoWidget.h"
 #include "ProjectTimeLineWidget.h"
 #include "DatabaseOperate.h"
+#include "ProjectAddEvent.h"
 
 class ProjectInfoWidget : public QWidget
 {
@@ -13,9 +14,14 @@ public:
 	ProjectInfoWidget(QString projectName, QWidget *parent = Q_NULLPTR);
 	~ProjectInfoWidget();
 
-private:
+public slots:
 	void refreshInfo();
 	void refreshTimeline();
+	
+private slots:
+	void addEvent();
+
+private:
 
 	Ui::ProjectInfoWidget ui;
 	QString m_projectName;
