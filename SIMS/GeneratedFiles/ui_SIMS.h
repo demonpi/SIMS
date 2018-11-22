@@ -39,6 +39,7 @@ public:
         if (SIMSClass->objectName().isEmpty())
             SIMSClass->setObjectName(QStringLiteral("SIMSClass"));
         SIMSClass->resize(597, 400);
+        SIMSClass->setStyleSheet(QStringLiteral(""));
         project = new QAction(SIMSClass);
         project->setObjectName(QStringLiteral("project"));
         QIcon icon;
@@ -71,7 +72,7 @@ public:
         dataStream->setIcon(icon5);
         centralWidget = new QWidget(SIMSClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        centralWidget->setStyleSheet(QStringLiteral("background-image: url(:/background/background.jpg);"));
+        centralWidget->setStyleSheet(QStringLiteral(""));
         horizontalLayout = new QHBoxLayout(centralWidget);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);

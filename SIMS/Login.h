@@ -2,6 +2,7 @@
 #include <qwidget.h>
 #include "ui_Login.h"
 #include "DatabaseOperate.h"
+#include "Log.h"
 
 class Login :
 	public QDialog

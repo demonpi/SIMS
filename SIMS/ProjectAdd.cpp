@@ -32,6 +32,8 @@ void ProjectAdd::addProjcet()
 		{
 			this->close();
 			QMessageBox::about(NULL, QStringLiteral("提示"), QStringLiteral("添加成功"));
+			//写入日志表
+			Log::getInstance()->addProject(name);
 		}
 		else
 		{

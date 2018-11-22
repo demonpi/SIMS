@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include "ui_ProjectAdd.h"
 #include "DatabaseOperate.h"
+#include "Log.h"
 
 class ProjectAdd : public QDialog
 {

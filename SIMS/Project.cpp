@@ -29,7 +29,7 @@ void Project::openProject(QString name)
 		m_mainWidget->clear();
 	}
 	//通过projectName初始化三个界面：基本信息、信息流、配套软件
-	m_infoWidget            = new ProjectInfoWidget();
+	m_infoWidget            = new ProjectInfoWidget(name);
 	m_dataStreamWidget = new ProjectDataStreamWidget();
 	m_softwareWidget     = new ProjectSoftwareWidget(name);
 

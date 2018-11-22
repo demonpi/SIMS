@@ -57,6 +57,8 @@ void Login::confirm()
 				QMessageBox::about(NULL, QStringLiteral("登录成功"), QStringLiteral("登录成功"));
 				m_username = username;
 				m_verify        = true;
+				//将Log类中的username进行更新
+				Log::getInstance()->setUserName(username);
 			}
 			else
 			{

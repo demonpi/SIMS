@@ -8,7 +8,5 @@
     <file>icons/software.png</file>
     <file>icons/project.png</file>
   </qresource>
-  <qresource prefix="background">
-    <file>background.jpg</file>
-  </qresource>
+  <qresource prefix="background"/>
 </RCC>
