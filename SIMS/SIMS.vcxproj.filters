@@ -69,6 +69,12 @@
     <ClCompile Include="ProjectAddEvent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DiagramItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DiagramScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SIMS.h">
@@ -102,6 +108,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="ProjectAddEvent.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="DiagramScene.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
@@ -144,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DatabaseOperate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiagramItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
