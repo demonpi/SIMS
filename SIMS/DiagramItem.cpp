@@ -37,3 +37,8 @@ QPixmap DiagramItem::image() const
 
 	return pixmap;
 }
+
+DiagramItem::DiagramType DiagramItem::diagramType() const
+{
+	return m_type;
+}

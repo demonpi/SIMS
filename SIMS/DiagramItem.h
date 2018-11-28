@@ -13,6 +13,7 @@ public:
 	~DiagramItem();
 
 	QPixmap image() const;
+	DiagramType diagramType() const;
 
 private:
 	DiagramType m_type;

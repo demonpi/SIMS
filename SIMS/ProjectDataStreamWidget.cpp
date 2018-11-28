@@ -7,8 +7,12 @@ ProjectDataStreamWidget::ProjectDataStreamWidget(QWidget *parent)
 
 	createToolBox();
 
-	m_scene = new DiagramScene(this);
+	m_scene = new DiagramScene(ui.graphicsView);
+	ui.graphicsView->setScene(m_scene);
 	m_scene->setSceneRect(QRectF(0, 0, 5000, 5000));
+
+	connect(m_scene, SIGNAL(itemInserted(DiagramItem*)), this, SLOT(itemInserted(DiagramItem*)));
+	connect(m_scene, SIGNAL(itemSelected(QGraphicsItem*)), 	this, SLOT(itemSelected(QGraphicsItem*)));
 }
 
 ProjectDataStreamWidget::~ProjectDataStreamWidget()
@@ -77,4 +81,15 @@ void ProjectDataStreamWidget::buttonGroupClicked(int id)
 
 	m_scene->setItemType(DiagramItem::DiagramType(id));
 	m_scene->setMode(DiagramScene::InsertItem);
+}
+
+void ProjectDataStreamWidget::itemInserted(DiagramItem *item)
+{
+	m_scene->setMode(DiagramScene::InsertItem);
+	m_buttonGroup->button(int(item->diagramType()))->setChecked(false);
+}
+
+void ProjectDataStreamWidget::itemSelected(QGraphicsItem *item)
+{
+
 }
