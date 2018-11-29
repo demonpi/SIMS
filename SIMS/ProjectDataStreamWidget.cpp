@@ -85,7 +85,7 @@ void ProjectDataStreamWidget::buttonGroupClicked(int id)
 
 void ProjectDataStreamWidget::itemInserted(DiagramItem *item)
 {
-	m_scene->setMode(DiagramScene::InsertItem);
+	m_scene->setMode(DiagramScene::MoveItem);
 	m_buttonGroup->button(int(item->diagramType()))->setChecked(false);
 }
 

@@ -15,6 +15,9 @@ public:
 	QPixmap image() const;
 	DiagramType diagramType() const;
 
+protected:
+	QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
+
 private:
 	DiagramType m_type;
 	QPolygonF m_Polygon;

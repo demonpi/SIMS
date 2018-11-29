@@ -42,3 +42,11 @@ DiagramItem::DiagramType DiagramItem::diagramType() const
 {
 	return m_type;
 }
+
+QVariant DiagramItem::itemChange(GraphicsItemChange change, const QVariant &value)
+{
+	if (change == QGraphicsItem::ItemPositionChange) {
+	}
+
+	return value;
+}

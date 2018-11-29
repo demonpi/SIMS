@@ -25,9 +25,10 @@ signals:
 
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
+	void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
+	void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent) override;
 
 private:
-
 	//≤Â»Îƒ£ Ω
 	Mode m_mode;
 	DiagramItem::DiagramType m_ItemType;
