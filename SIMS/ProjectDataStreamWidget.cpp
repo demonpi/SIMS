@@ -31,17 +31,21 @@ void ProjectDataStreamWidget::createToolBox()
 	QGridLayout* softwareLayout = new QGridLayout(ui.software_W);
 	softwareLayout->addWidget(createCellWidget(QStringLiteral("软件"), DiagramItem::Software), 0, 0);
 
-
-
 	softwareLayout->setRowStretch(3, 10);
 	softwareLayout->setColumnStretch(2, 10);
 	ui.software_W->setLayout(softwareLayout);
 	//create connect_W
 	QGridLayout* connectLayout= new QGridLayout(ui.connect_W);
-
+	connectLayout->addWidget(createCellWidget(QStringLiteral("1553B"), DiagramItem::Connect1553B), 0, 0);
+	connectLayout->addWidget(createCellWidget(QStringLiteral("RS422"), DiagramItem::ConnectRS422), 0, 1);
+	connectLayout->addWidget(createCellWidget(QStringLiteral("RS485"), DiagramItem::ConnectRS485), 1, 0);
+	connectLayout->addWidget(createCellWidget(QStringLiteral("CAN"),	   DiagramItem::ConnectCAN),    1, 1);
+	connectLayout->addWidget(createCellWidget(QStringLiteral("TCP"),     DiagramItem::ConnectTCP),     2, 0);
+	connectLayout->addWidget(createCellWidget(QStringLiteral("UDP"),    DiagramItem::ConnectUDP),    2, 1);
+	connectLayout->addWidget(createCellWidget(QStringLiteral("光纤"),    DiagramItem::ConnectFiber),   3, 0);
 
 	ui.connect_W->setLayout(connectLayout);
-	//create assist_W
+	//create assist_W 各种分隔符
 	QGridLayout* assistLayout = new QGridLayout(ui.assist_W);
 
 
@@ -58,6 +62,9 @@ QWidget * ProjectDataStreamWidget::createCellWidget(const QString & text, Diagra
 	button->setIcon(icon);
 	button->setIconSize(QSize(50, 50));
 	button->setCheckable(true);
+	//TODO:临时措施，仅为了实现功能
+	button->setObjectName(QString::number(type));
+
 	m_buttonGroup->addButton(button, int(type));
 
 	QGridLayout *layout = new QGridLayout;
@@ -77,10 +84,20 @@ void ProjectDataStreamWidget::buttonGroupClicked(int id)
 	{
 		if (m_buttonGroup->button(id) != button)
 			button->setChecked(false);
+		else
+		{
+			if (button->objectName() == QString::number(DiagramItem::Connect1553B))
+			{
+				m_scene->setMode(DiagramScene::InsertLine);
+			}
+			else
+			{
+				m_scene->setMode(DiagramScene::InsertItem);
+			}
+		}
 	}
 
 	m_scene->setItemType(DiagramItem::DiagramType(id));
-	m_scene->setMode(DiagramScene::InsertItem);
 }
 
 void ProjectDataStreamWidget::itemInserted(DiagramItem *item)

@@ -75,6 +75,9 @@
     <ClCompile Include="DiagramScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DiagramArrow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SIMS.h">
@@ -156,6 +159,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DiagramItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DiagramArrow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

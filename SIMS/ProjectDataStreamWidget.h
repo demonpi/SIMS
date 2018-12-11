@@ -32,5 +32,6 @@ private:
 
 	Ui::ProjectDataStreamWidget ui;
 	DiagramScene * m_scene;
+	//界面左侧的所有button
 	QButtonGroup * m_buttonGroup;
 };

@@ -56,6 +56,33 @@ void DiagramScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 
 void DiagramScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
 {
+	if (m_line != 0 && m_mode == InsertLine) {
+		QList<QGraphicsItem *> startItems = items(m_line->line().p1());
+		if (startItems.count() && startItems.first() == m_line)
+			startItems.removeFirst();
+		QList<QGraphicsItem *> endItems = items(m_line->line().p2());
+		if (endItems.count() && endItems.first() == m_line)
+			endItems.removeFirst();
+
+		removeItem(m_line);
+		delete m_line;
+
+		if (startItems.count() > 0 && endItems.count() > 0 &&
+			startItems.first()->type() == DiagramItem::Type &&
+			endItems.first()->type() == DiagramItem::Type &&
+			startItems.first() != endItems.first()) {
+			DiagramItem *startItem = qgraphicsitem_cast<DiagramItem *>(startItems.first());
+			DiagramItem *endItem = qgraphicsitem_cast<DiagramItem *>(endItems.first());
+			DiagramArrow *arrow = new DiagramArrow(startItem, endItem);
+			arrow->setColor(m_LineColor);
+			startItem->addArrow(arrow);
+			endItem->addArrow(arrow);
+			arrow->setZValue(-1000.0);
+			addItem(arrow);
+			arrow->updatePosition();
+		}
+	}
+	m_line = 0;
 	QGraphicsScene::mouseReleaseEvent(mouseEvent);
 }
 

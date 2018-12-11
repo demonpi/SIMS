@@ -3,6 +3,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include "DiagramItem.h"
+#include "DiagramArrow.h"
 
 class DiagramScene : public QGraphicsScene
 {

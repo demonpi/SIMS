@@ -11,6 +11,12 @@ DiagramItem::DiagramItem(DiagramType type, QGraphicsItem *parent)
 			m_Polygon << QPointF(-100, -100) << QPointF(100, -100) 	<< QPointF(100, 100)
 				<< QPointF(-100, 100)	<< QPointF(-100, -100);
 			break;
+		case Connect1553B:
+			m_Polygon << QPointF(-100, 100) << QPointF(100, -100);
+			break;
+		case ConnectRS422:
+			m_Polygon << QPointF(-50, 100) << QPointF(100, -50);
+			break;
 		default:
 			m_Polygon << QPointF(-120, -80) << QPointF(-70, 80) << QPointF(120, 80) << QPointF(70, -80)
 				<< QPointF(-120, -80);
@@ -38,9 +44,14 @@ QPixmap DiagramItem::image() const
 	return pixmap;
 }
 
-DiagramItem::DiagramType DiagramItem::diagramType() const
+int DiagramItem::type() const
 {
-	return m_type;
+	return Type;
+}
+
+void DiagramItem::addArrow(DiagramArrow * arrow)
+{
+	m_arrows.append(arrow);
 }
 
 QVariant DiagramItem::itemChange(GraphicsItemChange change, const QVariant &value)
