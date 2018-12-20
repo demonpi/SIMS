@@ -12,8 +12,18 @@ ProjectSoftwareWidget::ProjectSoftwareWidget(QString name,  QWidget *parent)
 	QString query = QString("SELECT * FROM project_software_v WHERE project_software_v.project_name = '" + name + "';");
 	m_model->setQuery((query), tempConnect->getDB());
 	ui.main_TB->setModel(m_model);
+
+	connect(ui.add_PB, SIGNAL(clicked()), this, SLOT(addSoftware()));
 }
 
 ProjectSoftwareWidget::~ProjectSoftwareWidget()
 {
+}
+
+void ProjectSoftwareWidget::addSoftware()
+{
+	//显示添加软件界面
+	SoftwareInfo* tempDialog = new SoftwareInfo();
+	tempDialog->show();
+
 }

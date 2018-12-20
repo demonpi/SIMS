@@ -51,6 +51,14 @@ void DiagramScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
 			;
 	}
 
+	//获取点击对象类别
+	if (selectedItems().count())
+	{
+		DiagramItem* tempItem = static_cast<DiagramItem*>(selectedItems().takeFirst());
+		//将当前item的类型信号释放出去
+		emit itemSelected(tempItem);
+	}
+
 	QGraphicsScene::mousePressEvent(mouseEvent);
 }
 

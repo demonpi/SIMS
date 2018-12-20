@@ -21,8 +21,7 @@ public:
 private slots:
 	void buttonGroupClicked(int id);
 	void itemInserted(DiagramItem *item);
-
-	void itemSelected(QGraphicsItem *item);
+	void itemSelected(DiagramItem *item);
 
 private:
 	void createToolBox();

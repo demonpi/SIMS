@@ -1,5 +1,6 @@
 #pragma once
 
+#include <QDebug>
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include "DiagramItem.h"
@@ -22,7 +23,7 @@ public slots:
 signals:
 	void itemInserted(DiagramItem *item);
 	void textInserted(QGraphicsTextItem *item);
-	void itemSelected(QGraphicsItem *item);
+	void itemSelected(DiagramItem *item);
 
 protected:
 	void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent) override;

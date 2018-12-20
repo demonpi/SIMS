@@ -106,7 +106,18 @@ void ProjectDataStreamWidget::itemInserted(DiagramItem *item)
 	m_buttonGroup->button(int(item->diagramType()))->setChecked(false);
 }
 
-void ProjectDataStreamWidget::itemSelected(QGraphicsItem *item)
+void ProjectDataStreamWidget::itemSelected(DiagramItem *item)
 {
+	DiagramItem::DiagramType currentItemType = item->diagramType();
+	//如果是software
+	
+
+
+
+
+
+	//如果是connect
+
+
 
 }

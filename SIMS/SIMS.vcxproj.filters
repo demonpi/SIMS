@@ -78,6 +78,9 @@
     <ClCompile Include="DiagramArrow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SoftwareInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="SIMS.h">
@@ -116,6 +119,9 @@
     <QtMoc Include="DiagramScene.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="SoftwareInfo.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="SIMS.ui">
@@ -146,6 +152,9 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="ProjectAddEvent.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="SoftwareInfo.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>

@@ -4,6 +4,7 @@
 #include <QSqlQueryModel>
 #include "ui_ProjectSoftwareWidget.h"
 #include "DatabaseOperate.h"
+#include "SoftwareInfo.h"
 
 class ProjectSoftwareWidget : public QWidget
 {
@@ -12,6 +13,9 @@ class ProjectSoftwareWidget : public QWidget
 public:
 	ProjectSoftwareWidget(QString name, QWidget *parent = Q_NULLPTR);
 	~ProjectSoftwareWidget();
+
+private slots:
+	void addSoftware();
 
 private:
 	Ui::ProjectSoftwareWidget ui;
